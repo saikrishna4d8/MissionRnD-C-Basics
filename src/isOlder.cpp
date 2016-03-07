@@ -14,5 +14,15 @@ NOTES: 		Don't use any built-in C functions for comparisions. You are free to wr
 */
 
 int isOlder(char *dob1, char *dob2) {
+	int i = 0;
+	while (dob1[i] != '\0')
+	{
+		if (dob1[i] > dob2[i])
+			return 1;
+		else if (dob1[i] < dob2[i])
+			return 2;
+		else
+			i++;
+	}
 	return 0;
 }
