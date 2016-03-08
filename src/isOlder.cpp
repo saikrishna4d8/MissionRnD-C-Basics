@@ -33,7 +33,7 @@ int isOlder(char *dob1, char *dob2) {
 	while (i<=k){
 		if (dob1[i] > dob2[i])
 			return 1;
-		else if (dob1[i] > dob2[i])
+		else if (dob1[i] < dob2[i])
 			return 2;
 		else
 			i++;
@@ -45,10 +45,10 @@ int isOlder(char *dob1, char *dob2) {
 	if (m == 4 || l == 4)
 		return -1;
 	i = k - 6;
-	while (i<=(k-4)){
+	while (i<(k-4)){
 		if (dob1[i] > dob2[i])
 			return 1;
-		else if (dob1[i] > dob2[i])
+		else if (dob1[i] < dob2[i])
 			return 2;
 		else
 			i++;
@@ -58,23 +58,22 @@ int isOlder(char *dob1, char *dob2) {
 		if (dob2[i] == 0)
 			m++;
 	}
-	if (m == 4 || l == 4)
+	if (m == 2 || l == 2)
 		return -1;
 	i = 0;
 	while (i < 2){
 		if (dob1[i] > dob2[i])
 			return 1;
-		else if (dob1[i] > dob2[i])
+		else if (dob1[i] < dob2[i])
 			return 2;
 		else
 			i++;
-		i++;
 		if (dob1[i] == 0)
 			l++;
 		if (dob2[i] == 0)
 			m++;
 	}
-	if (m == 4 || l == 4)
+	if (m ==  2|| l == 2)
 		return -1;
 	return 0;
 }
